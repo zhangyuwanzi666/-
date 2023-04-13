@@ -1,0 +1,21 @@
+
+{
+  "manifest_version": 2,
+  "name": "My Reservation Extension",
+  "version": "1.0",
+  "description": "This extension automatically reserves a gym court at a specified time",
+  "permissions": ["activeTab", "storage"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://yuyue.njucm.edu.cn/*"],
+      "js": ["reservation.js"]
+    }
+  ],
+  "browser_action": {
+    "default_title": "My Reservation Extension"
+  }
+}
